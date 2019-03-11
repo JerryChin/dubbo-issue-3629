@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn" monitorInterval="300">
+    <properties>
+        <property name="LOG_HOME">/logs/all/</property>
+    </properties>
+    <Appenders>
+
+        <!-- 控制台-->
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%level{length=1} %date{HH:mm:ss.SSS} [%logger{2}] %msg%n" />
+            <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+        </Console>
+
+    </Appenders>
+
+    <Loggers>
+        <Logger name="org.apache.dubbo" level="error" />
+
+        <Root level="error">
+            <AppenderRef ref="console" />
+        </Root>
+    </Loggers>
+</Configuration> 
